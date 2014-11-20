@@ -34,30 +34,25 @@ public class CottageSelect extends Activity {
         cottageSelectListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-             //todo //create classes for each of the cottages
                 //method to run when item is clicked
-                if(position == 0){
-                    Intent openFarmhouse = new Intent(this, Farmhouse.class);
+
+                if (position == 0) {
+                    Intent openFarmhouse = new Intent(CottageSelect.this, Farmhouse.class);
                     startActivity(openFarmhouse);
-                }
-                else if (position == 1) {
-                    Intent openBach = new Intent(this, Bach.class);
+                } else if (position == 1) {
+                    Intent openBach = new Intent(CottageSelect.this, Bach.class);
                     startActivity(openBach);
-                }
-                else if (position == 2){
-                    Intent openCowshed = new Intent(this, Cowshed.class);
+                } else if (position == 2) {
+                    Intent openCowshed = new Intent(CottageSelect.this, Cowshed.class);
                     startActivity(openCowshed);
-                }
-                else if (position == 3){
-                    Intent openCottage = new Intent(this, Cottage.class);
+                } else if (position == 3) {
+                    Intent openCottage = new Intent(CottageSelect.this, Cottage.class);
                     startActivity(openCottage);
-                }
-                else if (position == 4) {
-                    Intent openLodge = new Intent(this, Lodge.class);
+                } else if (position == 4) {
+                    Intent openLodge = new Intent(CottageSelect.this, Lodge.class);
                     startActivity(openLodge);
-                }
-                else if(position == 5){
-                    Intent openYurt = new Intent(this, Yurt.class);
+                } else if (position == 5) {
+                    Intent openYurt = new Intent(CottageSelect.this, Yurt.class);
                     startActivity(openYurt);
                 }
             }

@@ -7,5 +7,6 @@
     <string name="booking_button">Booking</string>
     <string name="photos_button">Photos</string>
     <string name="cottages_button">Cottages</string>
+    <string name="farmhouse_image">Farmhouse Image</string>
 
 </resources>

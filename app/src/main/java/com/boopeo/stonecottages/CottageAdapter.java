@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 /**
@@ -27,6 +28,10 @@ class CottageAdapter extends ArrayAdapter<String> {
 
         TextView cottageNameText = (TextView) theView.findViewById(R.id.cottageSelectTitle);
         cottageNameText.setText(cottageView);
+
+        ImageView cottageSelectImage = (ImageView) theView.findViewById(R.id.cottageSelectImageView);
+
+        cottageSelectImage.setImageResource(R.drawable.farmhouse);
 
         return theView;
     }

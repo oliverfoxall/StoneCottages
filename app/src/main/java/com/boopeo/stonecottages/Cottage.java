@@ -7,4 +7,5 @@ import android.app.Activity;
  */
 //todo work out weather I need seperate files for the layouts
 public class Cottage extends Activity {
+
 }
