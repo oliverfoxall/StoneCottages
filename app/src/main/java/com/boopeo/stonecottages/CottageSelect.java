@@ -36,6 +36,7 @@ public class CottageSelect extends Activity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //method to run when item is clicked
 
+                //if position refers to the list view strings. e.g. position 0 = farmhouse
                 if (position == 0) {
                     Intent openFarmhouse = new Intent(CottageSelect.this, Farmhouse.class);
                     startActivity(openFarmhouse);

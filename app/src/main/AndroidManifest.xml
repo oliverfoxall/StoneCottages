@@ -28,6 +28,26 @@
             android:label="@string/app_name">
 
             </activity>
+        <activity android:name=".Farmhouse"
+            android:label="@string/app_name">
+
+        </activity>
+        <activity android:name=".Cowshed"
+            android:label="@string/app_name">
+
+            </activity>
+        <activity android:name=".Cottage"
+            android:label="@string/app_name">
+
+            </activity>
+        <activity android:name=".Bach"
+            android:label="@string/app_name">
+
+            </activity>
+        <activity android:name=".Yurt"
+            android:label="@string/app_name">
+
+            </activity>
     </application>
 
 </manifest>

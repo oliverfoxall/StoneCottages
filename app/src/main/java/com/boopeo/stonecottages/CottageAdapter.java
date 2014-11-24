@@ -26,12 +26,24 @@ class CottageAdapter extends ArrayAdapter<String> {
 
         String cottageView = getItem(position);
 
-        TextView cottageNameText = (TextView) theView.findViewById(R.id.cottageSelectTitle);
-        cottageNameText.setText(cottageView);
+        TextView cottageFarmhouseText = (TextView) theView.findViewById(R.id.cottageSelectFarmhouse);
+        cottageFarmhouseText.setText(cottageView);
 
-        ImageView cottageSelectImage = (ImageView) theView.findViewById(R.id.cottageSelectImageView);
+        TextView cottageBachText = (TextView) theView.findViewById(R.id.cottageSelectBach);
+        cottageBachText.setText(cottageView);
 
-        cottageSelectImage.setImageResource(R.drawable.farmhouse);
+        TextView cottageCowshedText = (TextView) theView.findViewById(R.id.cottageSelectCowshed);
+        cottageCowshedText.setText(cottageView);
+
+        TextView cottageCottageText = (TextView) theView.findViewById(R.id.cottageSelectCottage);
+        cottageCottageText.setText(cottageView);
+
+        TextView cottageLodgeText = (TextView) theView.findViewById(R.id.cottageSelectLodge);
+        cottageLodgeText.setText(cottageView);
+
+        TextView cottageYurtText = (TextView) theView.findViewById(R.id.cottageSelectYurt);
+        cottageYurtText.setText(cottageView);
+
 
         return theView;
     }

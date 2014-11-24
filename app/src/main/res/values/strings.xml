@@ -8,5 +8,10 @@
     <string name="photos_button">Photos</string>
     <string name="cottages_button">Cottages</string>
     <string name="farmhouse_image">Farmhouse Image</string>
+    <string name="bach_image_string">Bach Image</string>
+    <string name="cowshed_image_string">Cowshed Image</string>
+    <string name="cottage_image_string">Cottage Image</string>
+    <string name="lodge_image_string">Lodge Image</string>
+    <string name="yurt_image_string">Yurt Image</string>
 
 </resources>
