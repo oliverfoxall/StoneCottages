@@ -13,5 +13,6 @@
     <string name="cottage_image_string">Cottage Image</string>
     <string name="lodge_image_string">Lodge Image</string>
     <string name="yurt_image_string">Yurt Image</string>
+    <string name="home_button">Home</string>
 
 </resources>
