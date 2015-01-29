@@ -8,7 +8,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.boopeo.stonecottages.MainActivity"
+            android:name=".MainActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -48,6 +48,13 @@
             android:label="@string/app_name">
 
             </activity>
+        <activity android:name=".Lodge"
+            android:label="@string/app_name">
+
+        </activity>
     </application>
+
+    <!-- allow internet connection -->
+    <uses-permission android:name="INTERNET" />
 
 </manifest>

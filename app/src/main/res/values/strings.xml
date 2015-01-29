@@ -14,5 +14,18 @@
     <string name="lodge_image_string">Lodge Image</string>
     <string name="yurt_image_string">Yurt Image</string>
     <string name="home_button">Home</string>
+    <string name="first_name">First Name</string>
+    <string name="title">Title</string>
+    <string name="select_title">Select Title</string>
+    <string name="second_name">Second Name</string>
+    <string name="address_1">Address Line 1</string>
+    <string name="address_2">Address Line 2</string>
+    <string name="city_town">City/Town</string>
+    <string name="post_code">Post Code</string>
+    <string name="email">Email</string>
+    <string name="cottage">Cottage</string>
+    <string name="from">From</string>
+    <string name="to">To</string>
+    <string name="submit">Submit</string>
 
 </resources>

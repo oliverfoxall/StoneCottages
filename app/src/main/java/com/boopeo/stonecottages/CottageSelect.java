@@ -56,7 +56,21 @@ public class CottageSelect extends Activity {
                     Intent openYurt = new Intent(CottageSelect.this, Yurt.class);
                     startActivity(openYurt);
                 }
+
             }
         });
+    }
+    public void openHome(View view){
+        Intent openHome = new Intent(this, MainActivity.class);
+        startActivity(openHome);
+    }
+    public void openBooking(View view){
+        Intent openBooking = new Intent(this, Booking.class);
+        startActivity(openBooking);
+    }
+
+    public void openPhotos(View view) {
+        Intent openPhotos = new Intent(this, Photos.class);
+        startActivity(openPhotos);
     }
 }

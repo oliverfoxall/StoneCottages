@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+<string-array name="titles">
+    <item>Mr</item>
+    <item>Mrs</item>
+    <item>Miss</item>
+    <item>Ms</item>
+    <item>Lord</item>
+    <item>Lady</item>
+    <item>Duke</item>
+    <item>Duchess</item>
+    <item>Sir</item>
+    <item>Dame</item>
+</string-array>
+
+</resources>

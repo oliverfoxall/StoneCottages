@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
+
 
 
 public class MainActivity extends Activity {
@@ -15,36 +15,6 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        Button cottageButton = (Button)findViewById(R.id.cottageButton);
-               cottageButton.setOnClickListener(new View.OnClickListener() {
-                   @Override
-                   public void onClick(View v) {
-                       Intent openCottage = new Intent(getApplicationContext(), CottageSelect.class);
-                       startActivity(openCottage);
-                   }
-               });
-
-       Button photoButton = (Button)findViewById(R.id.photosButton);
-            photoButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent openPhotos = new Intent(getApplicationContext(), Photos.class);
-                    startActivity(openPhotos);
-                }
-            });
-
-        Button bookingButton = (Button)findViewById(R.id.bookingButton);
-         bookingButton.setOnClickListener(new View.OnClickListener() {
-             @Override
-             public void onClick(View v) {
-                 Intent openBooking = new Intent(getApplicationContext(), Booking.class
-                 );
-                 startActivity(openBooking);
-             }
-         });
-
-
 
     }
 
@@ -71,4 +41,18 @@ public class MainActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
+    public void openBooking(View view){
+        Intent openBooking = new Intent(this, Booking.class);
+        startActivity(openBooking);
+    }
+    public void openPhotos(View view){
+        Intent openPhotos = new Intent(this, Photos.class);
+        startActivity(openPhotos);
+    }
+    public void openCottages(View view){
+        Intent openCottages = new Intent(this, CottageSelect.class);
+        startActivity(openCottages);
+    }
+
+    //todo make sure that all of this stuff is working, might need to add class to 'this'
 }

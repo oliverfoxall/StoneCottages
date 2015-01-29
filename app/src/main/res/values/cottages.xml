@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="cottages">
+        <item>Trallwyn Farmhouse</item>
+        <item>Trallwyn Bach</item>
+        <item>Cowshed</item>
+        <item>Cottage</item>
+        <item>Lodge</item>
+        <item>Yurt</item>
+
+    </string-array>
+</resources>
