@@ -40,6 +40,15 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/phone_number_string"/>
+    <EditText
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:inputType="phone"
+        android:id="@+id/phone"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="@string/address_1"/>
     <EditText
         android:layout_width="250dp"
@@ -123,9 +132,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/submit"
-        android:id="@+id/button"
+        android:id="@+id/submitButton"
         android:layout_marginTop="20dp"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:onClick="submitData"/>
+
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:id="@+id/error_message"
+           />
     <!--
     add date time picker
     -->
