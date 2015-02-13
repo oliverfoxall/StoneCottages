@@ -18,19 +18,20 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
 
     // Database Name
-    private static final String DATABASE_NAME = "android_api";
-
-    // Login table name
+    private static final String DATABASE_NAME = "http://jamesdowen.com/cli/stonecottages/";
+     // Login table name
     private static final String TABLE_CLIENT = "clienttable";
 
     // Login Table Columns names
     private static final String KEY_ID = "ClientID";
-    private static final String KEY_NAME = "SecondName";
-    private static final String KEY_EMAIL = "Email";
-    private static final String KEY_ADDRESS_1 = "Adress1";
-    private static final String KEY_ADDRESS_2 = "Adress2";
-    private static final String KEY_POST_CODE = "PostCode";
-    private static final String KEY_PHONE = "PhoneNumber";
+    private static final String KEY_FIRST_NAME = "firstName";
+    private static final String KEY_SECOND_NAME = "secondName";
+    private static final String KEY_CITY_TOWN = "cityTown";
+    private static final String KEY_EMAIL = "email";
+    private static final String KEY_ADDRESS_1 = "address1";
+    private static final String KEY_ADDRESS_2 = "address2";
+    private static final String KEY_POST_CODE = "postCode";
+    private static final String KEY_PHONE = "phoneNumber";
 
     public DatabaseHandler(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -41,10 +42,12 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         String CREATE_CLIENT_TABLE = "CREATE TABLE " + TABLE_CLIENT + "("
                 + KEY_ID + " INTEGER PRIMARY KEY,"
-                + KEY_NAME + " TEXT,"
+                + KEY_FIRST_NAME + " TEXT,"
+                + KEY_SECOND_NAME + "TEXT,"
                 + KEY_EMAIL + " TEXT UNIQUE,"
                 + KEY_ADDRESS_1 + " TEXT,"
-                + KEY_PHONE + "TEXT,"
+                + KEY_PHONE + "TEXT UNIQUE,"
+                + KEY_CITY_TOWN + "TEXT,"
                 + KEY_POST_CODE + "TEXT,"
                 + KEY_ADDRESS_2 + " TEXT" + ")";
         db.execSQL(CREATE_CLIENT_TABLE);
@@ -63,11 +66,13 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     /**
      * Storing user details in database
      * */
-    public void addUser(String name, String email, String phone, String address1, String address2, String postCode) {
+    public void addUser(String fName, String sName, String email, String phone, String address1, String address2, String postCode, String cityTown) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
-        values.put(KEY_NAME, name); // Name
+        values.put(KEY_FIRST_NAME, fName); // First Name
+        values.put(KEY_SECOND_NAME, sName); // Second Name
+        values.put(KEY_CITY_TOWN, cityTown); ///city/town
         values.put(KEY_EMAIL, email); // Email
         values.put(KEY_PHONE, phone); // phone number
         values.put(KEY_ADDRESS_1, address1); // address 1
@@ -91,12 +96,14 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         // Move to first row
         cursor.moveToFirst();
         if(cursor.getCount() > 0){
-            user.put("name", cursor.getString(1));
-            user.put("email", cursor.getString(2));
-            user.put("phone", cursor.getString(3));
-            user.put("address1", cursor.getString(4));
-            user.put("address2", cursor.getString(5));
-            user.put("postCode", cursor.getString(6));
+            user.put("fName", cursor.getString(1));
+            user.put("sName", cursor.getString(2));
+            user.put("cityTown", cursor.getString(3));
+            user.put("email", cursor.getString(4));
+            user.put("phone", cursor.getString(5));
+            user.put("address1", cursor.getString(6));
+            user.put("address2", cursor.getString(7));
+            user.put("postCode", cursor.getString(8));
 
         }
         cursor.close();

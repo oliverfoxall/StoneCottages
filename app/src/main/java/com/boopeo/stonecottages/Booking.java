@@ -2,6 +2,8 @@ package com.boopeo.stonecottages;
 
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -10,10 +12,11 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-
+import library.DatabaseHandler;
 import library.UserFunctions;
 
 
@@ -44,9 +47,15 @@ public class Booking extends Activity {
     private static String KEY_SUCCESS = "success";
     private static String KEY_UID = "uid";
     private static String KEY_FIRST_NAME = "first_name";
+    private static String KEY_SECOND_NAME = "second name";
+    private static String KEY_PHONE = "phone";
+    private static String KEY_ADDRESS_1 = "address1";
+    private static String KEY_ADDRESS_2 = "address2";
+    private static String KEY_CITY_TOWN = "cityTown";
+    private static String KEY_POST_CODE = "post code";
     private static String KEY_EMAIL = "email";
 
-
+    public final Intent openConfirmation = new Intent(this, Confirm.class);
 
 
     @Override
@@ -65,7 +74,7 @@ public class Booking extends Activity {
         email = (EditText) findViewById(R.id.email_address);
         cottage = (Spinner) findViewById(R.id.cottageSpinner);
         from = (DatePicker) findViewById(R.id.datePicker);
-        to = (DatePicker) findViewById(R, R.id.address2);
+        to = (DatePicker) findViewById(R.id.datePicker2);
         submit = (Button) findViewById(R.id.submitButton);
         errorMessage = (TextView) findViewById(R.id.error_message);
 
@@ -81,6 +90,7 @@ public class Booking extends Activity {
               String pc = postCode.getText().toString();
               String em = email.getText().toString();
               String ph = phone.getText().toString();
+
                 UserFunctions userFunctions = new UserFunctions();
                 JSONObject json = userFunctions.registerUser(fName,sName,a1,a2,ct,pc,em,ph);
 
@@ -89,10 +99,26 @@ public class Booking extends Activity {
                     if(json.getString(KEY_SUCCESS) != null){
                         errorMessage.setText("");
                         String res = json.getString(KEY_SUCCESS);
-                       //TODO finish this
+                        if(Integer.parseInt(res) == 1){
+                          //store user details in SQLite database
+                            DatabaseHandler db = new DatabaseHandler(getApplicationContext());
+                            JSONObject json_user = json.getJSONObject("user");
+                            //clear all previous data in database
+                            db.addUser(json_user.getString(KEY_FIRST_NAME), json_user.getString(KEY_SECOND_NAME),
+                                    json_user.getString(KEY_ADDRESS_1),json_user.getString(KEY_ADDRESS_2),
+                                    json_user.getString(KEY_EMAIL), json_user.getString(KEY_CITY_TOWN), json_user.getString(KEY_PHONE),
+                                    json_user.getString(KEY_POST_CODE));
+
+
+
+                                    startActivity(openConfirmation);
+
+                        } else {
+                            errorMessage.setText("error in database");
+                        }
                     }
                 } catch (JSONException e){
-
+                         e.printStackTrace();
                 }
 
 
@@ -102,12 +128,11 @@ public class Booking extends Activity {
         addItemsToTitleSpinner();
         addItemsToCottageSpinner();
 
-        //get strings from spinner selection
-        final Spinner titleSpinner = (Spinner) findViewById(R.id.titleSpinner);
-        String title = titleSpinner.getSelectedItem().toString();
 
-        final Spinner cottageSpinner = (Spinner) findViewById(R.id.cottageSpinner);
-        String cottage = cottageSpinner.getSelectedItem().toString();
+        //get strings from spinner selection
+
+        String titleSelection = titleSpinner.getSelectedItem().toString();
+        String cottageSelection = cottage.getSelectedItem().toString();
 
 
 

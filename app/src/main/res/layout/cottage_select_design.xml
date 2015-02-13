@@ -10,58 +10,9 @@
         android:textSize="30sp"
         android:drawableStart="@drawable/farmhouse"
         android:drawableLeft="@drawable/farmhouse"
+        android:drawablePadding="15dp"
         android:contentDescription="@string/farmhouse_image"
         android:textStyle="bold"
         android:padding="15dp"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/cottageSelectBach"
-        android:textSize="30sp"
-        android:drawableStart="@drawable/bach"
-        android:drawableLeft="@drawable/bach"
-        android:contentDescription="@string/bach_image_string"
-        android:textStyle="bold"
-        android:padding="15dp"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/cottageSelectCowshed"
-        android:textSize="30sp"
-        android:drawableStart="@drawable/cowshed"
-        android:drawableLeft="@drawable/cowshed"
-        android:contentDescription="@string/cowshed_image_string"
-        android:textStyle="bold"
-        android:padding="15dp"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/cottageSelectCottage"
-        android:textSize="30sp"
-        android:drawableStart="@drawable/cottage"
-        android:drawableLeft="@drawable/cottage"
-        android:contentDescription="@string/cottage_image_string"
-        android:textStyle="bold"
-        android:padding="15dp"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/cottageSelectLodge"
-        android:textSize="30sp"
-        android:drawableStart="@drawable/lodge"
-        android:drawableLeft="@drawable/lodge"
-        android:contentDescription="@string/lodge_image_string"
-        android:textStyle="bold"
-        android:padding="15dp"/>
 
-    <TextView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/cottageSelectYurt"
-    android:textSize="30sp"
-    android:drawableStart="@drawable/yurt"
-    android:drawableLeft="@drawable/yurt"
-    android:contentDescription="@string/yurt_image_string"
-    android:textStyle="bold"
-    android:padding="15dp"/>
-</LinearLayout>
+    </LinearLayout>

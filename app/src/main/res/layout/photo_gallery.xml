@@ -75,45 +75,45 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true">
-        <TableRow
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="0dp">
+        <Button
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="0dp">
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="@string/booking_button"
-                android:layout_weight="1"
-                android:padding="0dp"
-                android:background="#a5edd6e8"
-                android:onClick="openBooking"/>
+            android:layout_height="match_parent"
+            android:text="@string/cottages_button"
+            android:layout_weight="1"
+            android:padding="0dp"
+            android:background="#a5edd6e8"
+            android:onClick="openCottages"/>
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="fill_parent"
-                android:text="@string/home_button"
-                android:layout_weight="1"
-                android:padding="0dp"
-                android:onClick="openHome"
-                android:background="#a5edd6e8" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:text="@string/home_button"
+            android:layout_weight="1"
+            android:padding="0dp"
+            android:onClick="openHome"
+            android:background="#a5edd6e8" />
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="@string/photos_button"
-                android:padding="0dp"
-                android:onClick="openPhotos"
-                android:layout_weight="1"
-                android:background="#a5edd6e8" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/photos_button"
+            android:padding="0dp"
+            android:onClick="openBooking"
+            android:layout_weight="1"
+            android:background="#a5edd6e8" />
 
 
 
-        </TableRow>
-
-
+    </TableRow>
     </RelativeLayout>
 
 </TableLayout>
+
+
 </ScrollView>
 
 

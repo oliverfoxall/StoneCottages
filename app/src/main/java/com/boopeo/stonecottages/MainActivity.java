@@ -39,7 +39,7 @@ public class MainActivity extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
+        }
 
     public void openBooking(View view){
         Intent openBooking = new Intent(this, Booking.class);
